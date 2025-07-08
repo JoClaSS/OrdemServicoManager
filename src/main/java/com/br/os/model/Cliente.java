@@ -13,6 +13,9 @@ public class Cliente {
     private Long id;
 
     private String nome;
+    private char sexo;
+    private String cpf;
+    private String cnpj;
     private String email;
     private String telefone;
     private String endereco;
