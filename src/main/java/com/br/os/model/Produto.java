@@ -14,9 +14,18 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nomeProduto;
+    private String nome;
     private Integer quantidade;
     private BigDecimal precoUnitario;
+    private BigDecimal desconto;
+
+    @ManyToOne
+    @JoinColumn(name = "item_id")
+    private Item item;
+
+    @ManyToOne
+    @JoinColumn(name = "tecnico_id")
+    private Tecnico tecnico;
 
     @ManyToOne
     @JoinColumn(name = "ordem_id")

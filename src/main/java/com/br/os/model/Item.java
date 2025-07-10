@@ -14,6 +14,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long codigo;
+
     private String nome;
 
     private String descricao;

@@ -8,10 +8,13 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "ordens_servico")
+
 public class OrdemServico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private Long codigo;
 
     private String titulo;
     private String descricao;
@@ -28,10 +31,6 @@ public class OrdemServico {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-
-    @ManyToOne
-    @JoinColumn(name = "tecnico_id")
-    private Tecnico tecnico;
 
     @Column(name = "criado_por")
     private Long criadoPor; // ID do usuário do AuthManager

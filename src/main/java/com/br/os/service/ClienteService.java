@@ -14,27 +14,31 @@ public class ClienteService {
     ClienteRepository cRepository;
 
 
-    public Optional<Cliente> findById(Long id){
+    public Optional<Cliente> findById(Long id) {
         return cRepository.findById(id);
     }
 
-    public Optional<Cliente> findByCpf(String cpf){
+    public Optional<Cliente> findByCpf(String cpf) {
         return cRepository.findByCpf(cpf);
     }
 
-    public Optional<Cliente> findByCnpj(String cnpj){
+    public Optional<Cliente> findByCnpj(String cnpj) {
         return cRepository.findByCnpj(cnpj);
     }
 
-    public Optional<Cliente> findByNome(String nome){
+    public Optional<Cliente> findByNome(String nome) {
         return cRepository.findByNome(nome);
     }
 
-    public Optional<Cliente> findByTelefone(String telefone){
+    public Optional<Cliente> findByTelefone(String telefone) {
         return cRepository.findByTelefone(telefone);
     }
 
-    public Optional<Cliente> findByEmail(String email){
+    public Optional<Cliente> findByEmail(String email) {
         return cRepository.findByEmail(email);
+    }
+
+    public void saveCliente(Cliente cliente){
+        cRepository.saveAndFlush(cliente);
     }
 }
