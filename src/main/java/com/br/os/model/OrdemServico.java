@@ -2,6 +2,7 @@ package com.br.os.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -25,6 +26,8 @@ public class OrdemServico {
     @Enumerated(EnumType.STRING)
     private Prioridade prioridade;
 
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime dataCriacao;
     private LocalDateTime dataConclusao;
 

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface TecnicoRepository extends JpaRepository<Tecnico, Long> {
 
-    Optional<Tecnico> findByNome();
+//    Optional<Tecnico> findByNome();
 
 }
 

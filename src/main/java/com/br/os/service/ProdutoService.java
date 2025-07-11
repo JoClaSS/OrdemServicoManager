@@ -18,9 +18,12 @@ public class ProdutoService {
     }
 
     public Optional<Produto> findByNome(String nome){
-        Optional<Produto> byNome = pRepository.findByNome();
+        Optional<Produto> byNome = pRepository.findByNome(nome);
         return byNome;
     }
+
+
+
 
 
 

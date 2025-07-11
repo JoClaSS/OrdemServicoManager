@@ -12,14 +12,14 @@ import java.util.Optional;
 
 public interface OrdemServicoRepository extends JpaRepository<OrdemServico, Long> {
 
-    Optional<OrdemServico> findByCodigo();
-    Optional<OrdemServico> findByDescricao();
-    Optional<OrdemServico> findByStatus();
-    Optional<OrdemServico> findByPrioridade();
-    Optional<OrdemServico> findByDataCriacao();
-    Optional<OrdemServico> findByDataConclusão();
-    Optional<OrdemServico> findByCliente();
-    Optional<OrdemServico> findByCriadoPor();
+//    Optional<OrdemServico> findByCodigo();
+//    Optional<OrdemServico> findByDescricao();
+//    Optional<OrdemServico> findByStatus();
+//    Optional<OrdemServico> findByPrioridade();
+//    Optional<OrdemServico> findByDataCriacao();
+//    Optional<OrdemServico> findByDataConclusão();
+//    Optional<OrdemServico> findByCliente();
+//    Optional<OrdemServico> findByCriadoPor();
 
 }
 

@@ -5,6 +5,7 @@ import com.br.os.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,8 +27,8 @@ public class ClienteService {
         return cRepository.findByCnpj(cnpj);
     }
 
-    public Optional<Cliente> findByNome(String nome) {
-        return cRepository.findByNome(nome);
+    public List<Cliente> findCliente(String nome, String cpf, String cnpj) {
+        return cRepository.buscarCliente(nome,cpf,cnpj);
     }
 
     public Optional<Cliente> findByTelefone(String telefone) {
