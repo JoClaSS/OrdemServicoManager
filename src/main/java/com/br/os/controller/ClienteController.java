@@ -19,11 +19,16 @@ public class ClienteController {
     ClienteService clienteService;
 
     @PostMapping
-    public ResponseEntity<Cliente> cadastrarAtualizar(@RequestBody Cliente cliente) {
+    public ResponseEntity<Cliente> cadastrar(@RequestBody Cliente cliente) {
         clienteService.saveCliente(cliente);
         return ResponseEntity.ok(cliente);
     }
 
+    @PutMapping
+    public ResponseEntity<Cliente> atualizar(@RequestParam Long id,@RequestBody Cliente updateCliente) {
+        clienteService.atualizarCliente(id,updateCliente);
+        return ResponseEntity.ok(updateCliente);
+    }
 
     @GetMapping
     public ResponseEntity<List<Cliente>> findCliente(@RequestParam(required = false) String nome,
@@ -36,5 +41,10 @@ public class ClienteController {
     }
 
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteCliente(@RequestParam Long id){
+        clienteService.deleteCliente(id);
+        return ResponseEntity.ok().build();
+    }
 
 }

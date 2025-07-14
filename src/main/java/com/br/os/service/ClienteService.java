@@ -1,5 +1,6 @@
 package com.br.os.service;
 
+import com.br.os.Exception.ResourceNotFoundException;
 import com.br.os.model.Cliente;
 import com.br.os.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,13 @@ public class ClienteService {
 
     public void saveCliente(Cliente cliente){
         cRepository.saveAndFlush(cliente);
+    }
+
+    public void deleteCliente(Long id){ cRepository.deleteById(id);}
+
+    public void atualizarCliente(Long id, Cliente updatedCliente){
+            Cliente cliente = cRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Cliente não encontrado"));
+            cliente.atualizarCliente(updatedCliente);
+            cRepository.saveAndFlush(cliente);
     }
 }

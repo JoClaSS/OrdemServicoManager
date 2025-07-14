@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: os-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - os_db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://os_db:5432/os_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+    networks:
+      - os-net
+
+  os_db:
+    image: postgres:16
+    container_name: os-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: os_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - os-data:/var/lib/postgresql/data
+    networks:
+      - os-net
+
+networks:
+  os-net:
+
+volumes:
+  os-data:

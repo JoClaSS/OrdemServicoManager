@@ -19,4 +19,14 @@ public class Cliente {
     private String email;
     private String telefone;
     private String endereco;
+
+    public void atualizarCliente(Cliente outro) {
+        this.setNome(outro.getNome());
+        this.setCpf(outro.getCpf());
+        this.setCnpj(outro.getCnpj());
+        this.setTelefone(outro.getTelefone());
+        this.setEndereco(outro.getEndereco());
+        this.setEmail(outro.getEmail());
+        this.setSexo(outro.getSexo());
+    }
 }
